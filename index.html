@@ -11,6 +11,40 @@
 </head>
 
 <body>
+	<!-- THIS WIDGET IS DISCONTINUED -->
+	 
+	<div id="discontinuedOverlay"
+		style="position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: #141414ec; z-index: 9999; display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; font-family: sans-serif; text-align: center; padding: 20px; box-sizing: border-box; transition: opacity 1s ease; opacity: 1;">
+		<div style="margin-bottom: 20px; font-size: 30px; font-weight: 800; color:#ad2727">THIS WIDGET HAS BEEN DISCONTINUED</div>
+		<div style="margin-bottom: 10px; font-size: 22px; font-weight: 600; line-height: 1.5; opacity: 0.9;">Due to Spotify's API changes, this widget is no longer supported.</div>
+		<div style="margin-bottom: 10px; font-size: 22px; font-weight: 600; line-height: 1.5; opacity: 0.9;">Please upgrade to <span style="font-style: italic; color:#ffb700">Universal Now Playing</span> — my new music widget!</div>
+		<div style="margin-bottom: 30px; font-size: 22px; font-weight: 800; line-height: 1.5; opacity: 0.9;">— With love, nutty <3</div>
+		
+		<div style="background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); padding: 12px 24px; border-radius: 8px; font-size: 30px; font-weight: bold; color: #ffffff; margin-bottom: 25px; letter-spacing: 0.5px;">
+			nutty.gg/products/universal-now-playing
+		</div>
+	</div>
+
+	<script>
+		let timeLeft = 20;
+		const overlayEl = document.getElementById('discontinuedOverlay');
+		
+		const timer = setInterval(() => {
+			timeLeft--;
+			if (timeLeft <= 0) {
+				clearInterval(timer);
+				overlayEl.style.opacity = '0';
+				setTimeout(() => {
+					overlayEl.style.display = 'none';
+				}, 1000); // Matches the 1s CSS transition duration
+			}
+		}, 1000);
+	</script>
+
+
+
+	<!-- WIDGET STARTS HERE -->
+	 
 	<div id="statusContainer">Connecting...</div>
 	<div id="mainContainer">
 		<div id="albumArtBox">
